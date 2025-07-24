@@ -1,0 +1,131 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResCall | Sign Up</title>
+  <style>@font-face {
+  font-family: Gilroy;
+  src: url("Gilroy-Medium.9c1a391b.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Gilroy, sans-serif;
+}
+
+body {
+  color: #fff;
+  background: linear-gradient(to right, #004080, #0059b3);
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+}
+
+.container {
+  color: #004080;
+  background-color: #fff;
+  border-radius: 20px;
+  width: 380px;
+  padding: 40px 30px;
+  box-shadow: 0 12px 25px #0000001a;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2vw;
+}
+
+.form-group {
+  flex-direction: column;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 1vw;
+  font-weight: 600;
+}
+
+.form-group input {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  padding: 12px 15px;
+  font-size: 1vw;
+}
+
+.btn {
+  color: #fff;
+  cursor: pointer;
+  background-color: #004080;
+  border: none;
+  border-radius: 30px;
+  width: 100%;
+  padding: 12px;
+  font-size: 1vw;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #036;
+}
+
+.switch {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1vw;
+}
+
+.switch a {
+  color: #004080;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@media (width <= 600px) {
+  .container {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  h2 {
+    font-size: 6vw;
+  }
+
+  .form-group label, .form-group input, .btn, .switch {
+    font-size: 4vw;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Create Account</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required="">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required="">
+      </div>
+      <div class="form-group">
+        <label for="password">Create Password</label>
+        <input type="password" id="password" required="">
+      </div>
+      <button type="submit" class="btn">Sign Up</button>
+    </form>
+    <div class="switch">
+      Already have an account? <a href="/login.html">Login</a>
+    </div>
+  </div>
+  <script type="module" src="/signup.f72d0d54.js"></script>
+
+
+
+</body></html>

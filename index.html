@@ -1,0 +1,313 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>ResCall</title>
+  </head>
+  <body>
+    <div class="main" data-scroll-container>
+      <div class="cursor-follower"></div>
+
+      <div class="page1">
+        <div id="nav">
+          <h1>Res<span>Call</span></h1>
+          <div id="nav-left">
+            <a href="#" data-scroll-to=".hero">Home</a>
+            <a href="#" data-scroll-to="#page4">Pricing</a>
+            <a href="#" data-scroll-to="#page5">Upload Resume</a>
+            <a href="#" data-scroll-to="#page6">About Us</a>
+          </div>
+          <div id="nav-right">
+            <a href="signup.html" class="signup">Sign Up</a>
+            <a href="login.html" class="login">Login</a>
+          </div>
+        </div>
+
+        <div class="hero">
+          <div id="left-hero">
+            <h1>Unlock your perfect</h1>
+            <h1>Job Match</h1>
+            <p>
+              Upload your resume and a job description to see how well you
+              match. Get instant feedback and tips to improve.
+            </p>
+            <button class="btn">Get Started</button>
+          </div>
+          <div id="right-hero">
+            <img src="./img1.png" alt="resume image" />
+          </div>
+        </div>
+      </div>
+
+      <div id="page2">
+        <div class="how-it-works">
+          <h2>How <span>Res</span>Call Works</h2>
+          <p class="subtitle">
+            3 simple steps to optimize your resume and land your dream job
+          </p>
+          <div class="steps">
+            <div class="step">
+              <div class="circle">1</div>
+              <h3>Upload Resume</h3>
+              <p>
+                Choose your latest resume file and upload it securely to our
+                platform.
+              </p>
+            </div>
+            <div class="step">
+              <div class="circle">2</div>
+              <h3>Paste Job Description</h3>
+              <p>
+                Insert the job role you're targeting. We’ll analyze both
+                documents instantly.
+              </p>
+            </div>
+            <div class="step">
+              <div class="circle">3</div>
+              <h3>Get Match Score</h3>
+              <p>
+                See your resume's relevance score, keyword gaps, and AI-backed
+                improvement tips.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="page3">
+        <!-- Feedback Section -->
+        <div class="feedback-section">
+          <h2>What user says about <span>Res</span>Call</h2>
+
+          <div class="user-feedback">
+            <div class="feedback-box">
+              <p>
+                "I had no idea my resume was missing so many keywords until I
+                used ResCall."
+              </p>
+              <div class="user">— Arjun R., UI/UX Designer</div>
+            </div>
+            <div class="feedback-box">
+              <p>
+                "The match score gave me confidence that my resume was ready to
+                go."
+              </p>
+              <div class="user">— Sneha M., Data Analyst</div>
+            </div>
+            <div class="feedback-box">
+              <p>
+                "Clean design, no distractions — just what I needed to focus on
+                content."
+              </p>
+              <div class="user">— Kunal S., Software Engineer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resume Match Preview Section -->
+        <div class="preview-modern">
+          <div class="preview-text">
+            <h2>Ready to See Your Resume's True Potential?</h2>
+            <p>
+              Let ResCall evaluate your match in seconds and give you the
+              clarity and direction you need to succeed.
+            </p>
+            <button class="btn">Try ResCall Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="page4">
+        <div class="pricing-section">
+          <h2>Choose Your Plan</h2>
+          <p>
+            Start free, upgrade when you're ready to unlock advanced features
+          </p>
+
+          <div class="pricing-cards">
+            <!-- Free Plan -->
+            <div class="pricing-card">
+              <h3>Free</h3>
+              <p class="price">$0</p>
+              <ul>
+                <li>✔ Resume match score</li>
+                <li>✔ Keyword detection</li>
+                <li>✔ Basic tips</li>
+              </ul>
+              <button class="btn">Get Started</button>
+            </div>
+
+            <!-- Pro Plan -->
+            <div class="pricing-card popular">
+              <h3>Pro</h3>
+              <p class="price">$9.99/month</p>
+              <ul>
+                <li>✔ Everything in Free</li>
+                <li>✔ Advanced improvement tips</li>
+                <li>✔ PDF reports & export</li>
+                <li>✔ Priority support</li>
+              </ul>
+              <button class="btn">Upgrade to Pro</button>
+            </div>
+
+            <!-- Business Plan -->
+            <div class="pricing-card">
+              <h3>Team</h3>
+              <p class="price">Custom</p>
+              <ul>
+                <li>✔ Team analytics dashboard</li>
+                <li>✔ Multi-user access</li>
+                <li>✔ Dedicated support</li>
+              </ul>
+              <button class="btn">Contact Sales</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="banner">
+          <h2>
+            Start Matching Smarter with <span class="brand-name">ResCall</span>
+          </h2>
+          <button class="btn">Sign Up Free</button>
+        </div>
+      </div>
+
+      <div id="page5">
+        <div class="upload-section">
+          <h2>Upload Your Resume & Job Description</h2>
+          <p>See how well your resume matches your target job</p>
+
+          <form class="upload-form">
+            <div class="form-group">
+              <label for="resume">Upload Resume (PDF/DOCX)</label>
+              <input
+                type="file"
+                id="resume"
+                name="resume"
+                accept=".pdf, .doc, .docx"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="jobdesc">Paste Job Description</label>
+              <textarea
+                id="jobdesc"
+                name="jobdesc"
+                rows="6"
+                placeholder="Paste job description here..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn">Get Match Score</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="page6">
+        <div class="about-section">
+          <h2>About <span>Res</span>Call</h2>
+          <p class="about-subtitle">
+            Built by a passionate team to help job seekers stand out.
+          </p>
+
+          <div class="about-content">
+            <p>
+              ResCall was created to solve a real problem: resumes that don’t
+              land interviews. We wanted to help job seekers understand how well
+              they match job descriptions — instantly, and clearly.
+            </p>
+
+            <p>
+              With ResCall, users can upload their resumes and get match scores,
+              keyword insights, and actionable feedback to improve their chances
+              of getting hired.
+            </p>
+
+            <p>
+              Our vision is to level the playing field in the hiring process,
+              giving everyone — no matter their background — the tools to
+              present themselves better.
+            </p>
+          </div>
+
+          <div class="team-section">
+            <h3>Meet the Team</h3>
+            <div class="team-members">
+              <div class="member">👨‍💻 Akshun</div>
+              <div class="member">🧠 Akshat</div>
+              <div class="member">🎯 Ansh</div>
+              <div class="member">🛠️ Avee</div>
+            </div>
+            <p class="team-note">
+              Together, we designed and built ResCall to make career growth
+              smarter and simpler.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <footer id="footer">
+        <div class="footer-content">
+          <div class="footer-left">
+            <h3>Res<span>Call</span></h3>
+            <p>Helping you match smarter, apply better.</p>
+          </div>
+
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#" data-scroll-to=".hero">Home</a></li>
+              <li><a href="#" data-scroll-to="#page4">Pricing</a></li>
+              <li><a href="#" data-scroll-to="#page5">Upload Resume</a></li>
+              <li><a href="#" data-scroll-to="#page6">About Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h4>Contact</h4>
+            <p>
+              Email:
+              <a href="mailto:ResCall.team@gmail.com"
+                >ResCall.team@gmail.com</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2025 ResCall. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+    <!-- Locomotive Scroll  -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+
+    <!-- GSAP Core -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- GSAP ScrollTrigger Plugin -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

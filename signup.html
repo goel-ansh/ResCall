@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ResCall | Sign Up</title>
+  <style>
+    @font-face {
+      font-family: Gilroy;
+      src: url(./Gilroy-Medium.ttf) format("truetype");
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Gilroy, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(to right, #004080, #0059b3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .container {
+      background-color: #ffffff;
+      color: #004080;
+      width: 380px;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 2vw;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      margin-bottom: 8px;
+      font-size: 1vw;
+      font-weight: 600;
+    }
+
+    .form-group input {
+      padding: 12px 15px;
+      font-size: 1vw;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background-color: #004080;
+      color: white;
+      border-radius: 30px;
+      font-size: 1vw;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #003366;
+    }
+
+    .switch {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 1vw;
+    }
+
+    .switch a {
+      color: #004080;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 90%;
+        padding: 30px 20px;
+      }
+
+      h2 {
+        font-size: 6vw;
+      }
+
+      .form-group label,
+      .form-group input,
+      .btn,
+      .switch {
+        font-size: 4vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Create Account</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Create Password</label>
+        <input type="password" id="password" required />
+      </div>
+      <button type="submit" class="btn">Sign Up</button>
+    </form>
+    <div class="switch">
+      Already have an account? <a href="login.html">Login</a>
+    </div>
+  </div>
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>
