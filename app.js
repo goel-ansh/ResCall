@@ -28,12 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         if (!response.ok) {
-          const err = await response.json();
-          alert("❌ Signup failed: " + (err.message || "Something went wrong"));
-          alert("✅ Signup successful! Please login now.");
-          window.location.href = "login.html";
-          return;
-        }
+        const err = await response.json().catch(() => ({}));
+        alert("❌ Signup failed: " + (err.message || "Something went wrong"));
+        return;
+        }  
+
+      // Only on success
+      alert("✅ Signup successful! Please login now.");
+      window.location.href = "login.html";
 
       } catch (err) {
         console.error("Signup error:", err);
@@ -43,51 +45,102 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ------------------- LOGIN -------------------
-  const loginForm = document.getElementById("loginForm");
-  if (loginForm) {
-    loginForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
+  // const loginForm = document.getElementById("loginForm");
+  // if (loginForm) {
+  //   loginForm.addEventListener("submit", async (e) => {
+      // e.preventDefault();
 
-      const email = document.getElementById("email")?.value.trim();
-      const password = document.getElementById("password")?.value;
+      // const email = document.getElementById("email")?.value.trim();
+      // const password = document.getElementById("password")?.value;
       
-      console.log("Email =>", email)
-      console.log("Password =>", password)
-      console.log(JSON.stringify({ email, password }))
+      // console.log("Email =>", email)
+      // console.log("Password =>", password)
+      // console.log(JSON.stringify({ email, password }))
 
-      if (!email || !password) {
-        alert("⚠ Please fill in all fields.");
+      // if (!email || !password) {
+      //   alert("⚠ Please fill in all fields.");
+      //   return;
+      // }
+
+      // try {
+      //   const response = await fetch("https://rescall.onrender.com/login", {
+      //     method: "POST",
+      //     headers: { "Content-Type": "application/json" },
+      //     body: JSON.stringify({ email, password }),
+      //   });
+
+  //       if (!response.ok) {
+  //         const err = await response.json();
+  //         alert("❌ Login failed: " + (err.message || "Something went wrong"));
+  //         return;
+  //       }
+
+  //       const { accessToken, refreshToken } = await response.json();
+
+  //       localStorage.setItem("accessToken", accessToken);
+  //       localStorage.setItem("refreshToken", refreshToken);
+
+  //       alert("✅ Login successful!");
+
+  //       const redirectURL = localStorage.getItem("redirectAfterLogin") || "index.html";
+  //       window.location.href = redirectURL;
+  //     } catch (err) {
+  //       console.error("Login error:", err);
+  //       alert("❌ An error occurred during login.");
+  //     }
+  //   });
+  // }
+
+  // ------------------- LOGIN -------------------
+const loginForm = document.getElementById("loginForm");
+if (loginForm) {
+  loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("email")?.value.trim();
+    const password = document.getElementById("password")?.value;
+
+    if (!email || !password) {
+      alert("⚠ Please fill in all fields.");
+      return;
+    }
+
+    try {
+      const response = await fetch("https://rescall.onrender.com/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const contentType = response.headers.get("content-type");
+      const isJson = contentType && contentType.includes("application/json");
+
+      if (!response.ok) {
+        const errorData = isJson ? await response.json() : { message: await response.text() };
+        alert("❌ Login failed: " + (errorData.message || "Something went wrong"));
         return;
       }
 
-      try {
-        const response = await fetch("https://rescall.onrender.com/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, password }),
-        });
-
-        if (!response.ok) {
-          const err = await response.json();
-          alert("❌ Login failed: " + (err.message || "Something went wrong"));
-          return;
-        }
-
-        const { accessToken, refreshToken } = await response.json();
-
-        localStorage.setItem("accessToken", accessToken);
-        localStorage.setItem("refreshToken", refreshToken);
-
-        alert("✅ Login successful!");
-
-        const redirectURL = localStorage.getItem("redirectAfterLogin") || "index.html";
-        window.location.href = redirectURL;
-      } catch (err) {
-        console.error("Login error:", err);
-        alert("❌ An error occurred during login.");
+      const { accessToken, refreshToken } = isJson ? await response.json() : {};
+      if (!accessToken || !refreshToken) {
+        alert("❌ Login failed: Invalid server response.");
+        return;
       }
-    });
-  }
+
+      localStorage.setItem("accessToken", accessToken);
+      localStorage.setItem("refreshToken", refreshToken);
+
+      alert("✅ Login successful!");
+      const redirectURL = localStorage.getItem("redirectAfterLogin") || "index.html";
+      window.location.href = redirectURL;
+
+    } catch (err) {
+      console.error("Login error:", err);
+      alert("❌ An error occurred during login.");
+    }
+  });
+}
+
 
   // ------------------- TOKEN REFRESH -------------------
   async function refreshAccessToken() {
