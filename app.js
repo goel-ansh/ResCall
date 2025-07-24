@@ -10,6 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = document.getElementById("email")?.value.trim();
       const password = document.getElementById("password")?.value.trim();
 
+      console.log("Name =>", name)
+      console.log("Email =>", email)
+      console.log("Password =>", password)
+      console.log(JSON.stringify({ name, email, password }))
+
       if (!name || !email || !password) {
         alert("⚠ Please fill all fields.");
         return;
@@ -25,11 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!response.ok) {
           const err = await response.json();
           alert("❌ Signup failed: " + (err.message || "Something went wrong"));
+          alert("✅ Signup successful! Please login now.");
+          window.location.href = "login.html";
           return;
         }
 
-        alert("✅ Signup successful! Please login now.");
-        window.location.href = "login.html";
       } catch (err) {
         console.error("Signup error:", err);
         alert("❌ Network error: " + err.message);
@@ -45,6 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const email = document.getElementById("email")?.value.trim();
       const password = document.getElementById("password")?.value;
+      
+      console.log("Email =>", email)
+      console.log("Password =>", password)
+      console.log(JSON.stringify({ email, password }))
 
       if (!email || !password) {
         alert("⚠ Please fill in all fields.");
