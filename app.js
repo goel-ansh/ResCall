@@ -1,3 +1,4 @@
+console.log("App.js has Started")
 document.addEventListener("DOMContentLoaded", () => {
 
   // ------------------- REGISTER -------------------
